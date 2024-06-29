@@ -1,11 +1,13 @@
 # Arduino_BluetoothControlledCar
 
-This Arduino sketch controls a car, that was built, using inputs from the serial monitor. It utilizes the HC-SR04 ultrasonic sensor to detect obstacles and controls the movement of motors accordingly. The robot can move forward, backward, turn left, turn right, and control an LED.
+This Arduino sketch controls a car, that was built, using inputs from the serial monitor. It utilizes the HC-SR04 ultrasonic sensor to detect obstacles and controls the movement of motors accordingly. The robot can move forward, backward, turn left, turn right, and control an LED. The LED is used to indicate that the car is receiving commands from the mobile phone via Bluetooth to perform actions such as moving forward, left, right, etc. The project uses the HC-05 Bluetooth module for wireless communication and also experiments with the ESP32, which provides both WiFi and Bluetooth capabilities.
 
 ## Prerequisites
 
 - Arduino board
 - HC-SR04 ultrasonic sensor
+- HC-05 Bluetooth module (Option 1)
+- ESP32 module (Option 2)
 - Motors and motor driver circuit
 - LED and appropriate resistor
 
@@ -19,6 +21,10 @@ This Arduino sketch controls a car, that was built, using inputs from the serial
    - Right motor forward pin: 11
    - Right motor reverse pin: 10
 4. Connect the LED to pin 6 of the Arduino.
+5. Connect the HC-05 Bluetooth module to the appropriate pins of the Arduino:
+   - Connect the TX pin of the Bluetooth module to the RX pin of the Arduino.
+   - Connect the RX pin of the Bluetooth module to the TX pin of the Arduino.
+6. (Optional) If using the ESP32, follow the corresponding pin connections for your setup.
 
 ## Software Setup
 
@@ -40,4 +46,8 @@ This Arduino sketch controls a car, that was built, using inputs from the serial
    - `W`: Turn the first LED on.
    - `w`: Turn the first LED off.
    - `S`: Stop (all motors stop).
-3. The robot will continuously read inputs from the serial monitor and perform the corresponding actions.
+3. The robot will continuously read inputs from the serial monitor and perform the corresponding actions. The LED will light up to indicate that a command has been received from the mobile phone via Bluetooth.
+
+## Contributors
+
+- [Saad Irfan](https://github.com/saadirfan-SI)
